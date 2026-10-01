@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desat Info Tech - Software Products &amp; Innovative Digital Solutions</title>
+  <meta name="description" content="Desat Info Tech is a software development company focused on delivering innovative digital solutions. We specialize in custom software development, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation.">
+  
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Desat Info Tech - Software Products &amp; Digital Solutions">
+  <meta property="og:description" content="Custom software development, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.">
+  <meta property="og:image" content="assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Desat Info Tech - Software Solutions Built to Scale">
+  <meta name="twitter:description" content="We help businesses grow through reliable, scalable, and modern technology.">
+  <meta name="twitter:image" content="assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/images/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Top Navigation Bar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo" aria-label="Desat Info Tech Home">
+        <img src="assets/images/logo-nav.png" alt="Desat Info Tech Logo" width="180" height="42">
+        <span class="product-badge-tag"><span class="pulsing-dot"></span> Software Products</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#products" class="nav-link">Products &amp; Suites</a></li>
+          <li><a href="#solutions" class="nav-link">Solutions</a></li>
+          <li><a href="#showcase" class="nav-link">Showcase</a></li>
+          <li><a href="#process" class="nav-link">How We Build</a></li>
+          <li><a href="contact-us.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div style="display: flex; align-items: center; gap: 14px;">
+        <a href="contact-us.html" class="nav-cta-btn">Start Your Project</a>
+      </div>
+
+      <!-- Mobile Nav Hamburger Button -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer">
+      <a href="#products" class="nav-link">Products &amp; Suites</a>
+      <a href="#solutions" class="nav-link">Solutions</a>
+      <a href="#showcase" class="nav-link">Showcase</a>
+      <a href="#process" class="nav-link">How We Build</a>
+      <a href="contact-us.html" class="nav-link">Contact Us</a>
+      <a href="contact-us.html" class="nav-cta-btn text-center" style="display: block; margin-top: 14px;">Start Your Project</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         Hero Section
+         ======================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="grid-bg-overlay"></div>
+      <span class="star-accent" style="top: 18%; left: 12%;">✦</span>
+      <span class="star-accent" style="top: 24%; right: 14%;">✦</span>
+      <span class="star-accent" style="bottom: 30%; left: 8%;">✦</span>
+      <span class="star-accent" style="bottom: 35%; right: 10%;">✦</span>
+
+      <img src="assets/images/hero-clouds.png" alt="" class="hero-clouds-bg" aria-hidden="true">
+
+      <div class="container hero-content">
+        <div class="pill-badge" style="margin-bottom: 24px;">
+          <span class="star-icon">✦</span> Innovative Digital Solutions &bull; Built to Scale
+        </div>
+
+        <h1 class="hero-title">Software products &amp; digital solutions<br>built to scale.</h1>
+        <p class="hero-subtitle">
+          Desat Info Tech delivers custom software, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="contact-us.html" class="btn-primary">Start Your Project</a>
+          <a href="#products" class="btn-secondary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Explore Product Suites
+          </a>
+        </div>
+
+        <!-- Trust Strip -->
+        <div class="trust-strip">
+          <div class="trust-item"><span class="trust-item-icon">🚀</span> 100% On-Time Delivery Guarantee</div>
+          <div class="trust-item"><span class="trust-item-icon">⚡</span> High-Performance &amp; Scalable Tech</div>
+          <div class="trust-item"><span class="trust-item-icon">🔒</span> 100% IP &amp; Code Ownership</div>
+          <div class="trust-item"><span class="trust-item-icon">💡</span> Modern Cloud &amp; AI Integration</div>
+        </div>
+
+        <!-- Floating Prompt Capsule UI -->
+        <div class="hero-prompt-container">
+          <div class="hero-prompt-box">
+            <div class="hero-prompt-input-row">
+              <span class="hero-prompt-sparkle">✦</span>
+              <div class="hero-prompt-text" id="hero-prompt-display" contenteditable="true">Explore Desat's software products, architectures, and digital solutions</div>
+            </div>
+
+            <div class="hero-prompt-tags-row">
+              <div class="prompt-tags-list">
+                <button class="prompt-tag active" type="button" data-flow="software">
+                  <svg class="dot-grid-icon" viewBox="0 0 11 11" fill="#006fff">
+                    <path d="M3 0h2v2H3zM6 0h2v2H6zM3 6h2v2H3zM0 6h2v2H0zM6 6h2v2H6zM9 6h2v2H9zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3zM6 9h2v2H6z"/>
+                  </svg>
+                  Custom Software
+                </button>
+                <button class="prompt-tag" type="button" data-flow="webmobile">
+                  <svg class="dot-grid-icon" viewBox="0 0 11 11" fill="#a2e198">
+                    <path d="M3 0h2v2H3zM0 6h2v2H0zM0 9h2v2H0zM6 6h2v2H6zM9 6h2v2H9zM9 9h2v2H9zM3 3h2v2H3zM0 0h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM9 0h2v2H9zM3 9h2v2H3z"/>
+                  </svg>
+                  Web &amp; Mobile
+                </button>
+                <button class="prompt-tag" type="button" data-flow="aicloud">
+                  <svg class="dot-grid-icon" viewBox="0 0 11 11" fill="#ffcc40">
+                    <path d="M6 0h2v2H6zM3 6h2v2H3zM6 6h2v2H6zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3z"/>
+                  </svg>
+                  AI &amp; Cloud
+                </button>
+                <button class="prompt-tag" type="button" data-flow="uiux">
+                  <svg class="dot-grid-icon" viewBox="0 0 11 11" fill="#aeabff">
+                    <path d="M3 6h2v2H3zM0 9h2v2H0zM6 6h2v2H6zM9 9h2v2H9zM3 3h2v2H3zM0 0h2v2H0zM6 3h2v2H6zM9 0h2v2H9z"/>
+                  </svg>
+                  UI/UX &amp; Transform
+                </button>
+              </div>
+
+              <button class="prompt-mic-btn" type="button" id="prompt-run-trigger" aria-label="Explore Product" title="View Blueprint">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Window Mockup Graphic (Interactive Product Suite Explorer) -->
+        <div class="hero-mockup-wrapper">
+          <div class="hero-console-header">
+            <div class="console-tabs">
+              <div class="mockup-dots" style="margin-right: 12px;">
+                <span class="mockup-dot red"></span>
+                <span class="mockup-dot yellow"></span>
+                <span class="mockup-dot green"></span>
+              </div>
+              <button class="console-tab-btn active" data-tab="overview">Product Overview</button>
+              <button class="console-tab-btn" data-tab="tech">Tech Architecture</button>
+              <button class="console-tab-btn" data-tab="deliverables">Deliverables &amp; SLA</button>
+            </div>
+
+            <div class="console-controls">
+              <span style="font-size: 12px; color: #a5b4fc; font-family: var(--font-mono);">Desat Product Engine</span>
+              <a href="contact-us.html" class="btn-run-workflow" style="text-decoration: none;">
+                Get Estimate &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Product Console Content Area -->
+          <div class="product-console-view">
+            <!-- Sidebar with 4 Product Suites -->
+            <div class="product-console-sidebar">
+              <button class="console-product-item active" data-product="custom">
+                <span>💻</span> Custom Software
+              </button>
+              <button class="console-product-item" data-product="webapps">
+                <span>🌐</span> Web Applications
+              </button>
+              <button class="console-product-item" data-product="mobile">
+                <span>📱</span> Mobile Apps (iOS/Android)
+              </button>
+              <button class="console-product-item" data-product="ai">
+                <span>🧠</span> AI &amp; Cloud Solutions
+              </button>
+            </div>
+
+            <!-- Dynamic Product Body -->
+            <div class="product-console-body" id="product-console-details">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+                  <h3 style="font-size: 19px; color: #ffffff; font-weight: 700;" id="console-prod-title">Custom Software Development Platform</h3>
+                  <span class="tech-tag blue" id="console-prod-badge">Enterprise Ready</span>
+                </div>
+                <p style="font-size: 14px; color: #9ca3af; line-height: 1.6;" id="console-prod-desc">
+                  Tailor-made software platforms, automated business workflows, scalable backend APIs, and ERP systems engineered specifically for your company's operational needs.
+                </p>
+
+                <ul class="product-feature-list" id="console-prod-features">
+                  <li class="product-feature-item"><span class="icon">✓</span> High-concurrency relational and NoSQL database architecture</li>
+                  <li class="product-feature-item"><span class="icon">✓</span> Microservices or clean modular monolith with REST/GraphQL APIs</li>
+                  <li class="product-feature-item"><span class="icon">✓</span> 100% intellectual property and complete source code ownership</li>
+                </ul>
+
+                <div class="tech-stack-row" id="console-prod-tech">
+                  <span class="tech-tag blue">Node.js</span>
+                  <span class="tech-tag green">Python</span>
+                  <span class="tech-tag purple">PostgreSQL</span>
+                  <span class="tech-tag amber">Docker</span>
+                  <span class="tech-tag">AWS Cloud</span>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08);">
+                <div style="font-size: 12.5px; color: #717885; font-family: var(--font-mono);">
+                  Delivery Speed: <span style="color: #30c48b; font-weight: 600;">2-4 Week Sprints</span> &bull; SLA: <span style="color: #30c48b;">99.9% Uptime</span>
+                </div>
+                <a href="contact-us.html" class="nav-cta-btn" style="padding: 6px 14px; font-size: 13px;">Request Blueprint</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Console Status & Metrics -->
+          <div class="console-metrics-bar">
+            <div style="display: flex; gap: 20px;">
+              <span class="metric-pill">Architecture: <span class="metric-value">Microservices / Cloud-Native</span></span>
+              <span class="metric-pill">Scalability: <span class="metric-value">1M+ Users Tested</span></span>
+              <span class="metric-pill">Security: <span class="metric-value">SOC-2 &amp; OWASP Top 10</span></span>
+            </div>
+            <div class="metric-pill" style="color: #30c48b;">
+              ● Delivery Team: Dedicated Engineering Squad
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Partners Ticker Marquee
+         ======================================================================== -->
+    <section class="ticker-section" aria-label="Trusted Businesses">
+      <div class="container">
+        <p class="ticker-heading">Trusted technology partner for fast-growing businesses and modern enterprises</p>
+      </div>
+
+      <div class="ticker-wrapper">
+        <div class="ticker-track">
+          <!-- Set 1 -->
+          <div class="ticker-item"><img src="assets/images/partner-courto.svg" alt="Courto" width="130" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-vista.svg" alt="Vista" width="115" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-rentigo.svg" alt="Rentigo" width="135" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-carvia.svg" alt="Carvia" width="125" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-driveon.svg" alt="DriveON" width="130" height="32"></div>
+          <!-- Set 2 -->
+          <div class="ticker-item"><img src="assets/images/partner-courto.svg" alt="Courto" width="130" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-vista.svg" alt="Vista" width="115" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-rentigo.svg" alt="Rentigo" width="135" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-carvia.svg" alt="Carvia" width="125" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-driveon.svg" alt="DriveON" width="130" height="32"></div>
+        </div>
+
+        <div class="ticker-track" aria-hidden="true">
+          <!-- Duplicate Track for Seamless Loop -->
+          <div class="ticker-item"><img src="assets/images/partner-courto.svg" alt="Courto" width="130" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-vista.svg" alt="Vista" width="115" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-rentigo.svg" alt="Rentigo" width="135" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-carvia.svg" alt="Carvia" width="125" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-driveon.svg" alt="DriveON" width="130" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-courto.svg" alt="Courto" width="130" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-vista.svg" alt="Vista" width="115" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-rentigo.svg" alt="Rentigo" width="135" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-carvia.svg" alt="Carvia" width="125" height="32"></div>
+          <div class="ticker-item"><img src="assets/images/partner-driveon.svg" alt="DriveON" width="130" height="32"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Why Choose Desat (Problem vs Solution)
+         ======================================================================== -->
+    <section class="features-section" id="why-desat">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Why businesses choose<br>Desat Info Tech</h2>
+          <p class="section-subheading">From first concept to reliable production launch, we bring strategy, UI/UX design, and robust engineering together under one focused product team.</p>
+        </div>
+
+        <div class="comparison-grid">
+          <!-- Problem Card 1 -->
+          <div class="comparison-card">
+            <div class="card-icon-badge cross" aria-hidden="true">✕</div>
+            <div class="card-body">
+              <h3>Off-The-Shelf Limitations</h3>
+              <ul class="card-bullet-list">
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Generic software that doesn't fit your business processes</li>
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Expensive ongoing licensing fees without feature control</li>
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Disconnected systems causing data silos and bottlenecks</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Problem Card 2 -->
+          <div class="comparison-card">
+            <div class="card-icon-badge cross" aria-hidden="true">✕</div>
+            <div class="card-body">
+              <h3>Fragile &amp; Slow Delivery</h3>
+              <ul class="card-bullet-list">
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Freelancers and agencies who disappear after launch</li>
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Unscalable code that requires expensive rewrites</li>
+                <li class="card-bullet-item"><span class="bullet-icon">—</span> Poor user experience leading to low adoption rates</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Solution Card (Featured) -->
+          <div class="comparison-card solution-card">
+            <div class="card-icon-badge check" aria-hidden="true">✓</div>
+            <div class="card-body">
+              <h3>The Desat Product Advantage</h3>
+              <ul class="card-bullet-list">
+                <li class="card-bullet-item"><span class="bullet-icon">✦</span> Custom software tailored 100% to your workflows</li>
+                <li class="card-bullet-item"><span class="bullet-icon">✦</span> Modern cloud architecture (AWS, GCP, Azure, Docker)</li>
+                <li class="card-bullet-item"><span class="bullet-icon">✦</span> 100% full IP and source code ownership from day one</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         6 Core Software Product Suites (Grid)
+         ======================================================================== -->
+    <section class="services-section" id="products">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Innovative digital solutions<br>tailored for growth</h2>
+          <p class="section-subheading">We specialize in delivering high-impact software products across every layer of the modern digital stack.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Suite 1: Custom Software -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#006fff">
+                <path d="M3 0h2v2H3zM6 0h2v2H6zM3 6h2v2H3zM0 6h2v2H0zM6 6h2v2H6zM9 6h2v2H9zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3zM6 9h2v2H6z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Custom Software Development</h4>
+              <p>Bespoke enterprise platforms, CRM/ERP systems, backend microservices, and internal workflow tools built for your exact operational requirements.</p>
+            </div>
+            <div class="service-footer-note">Tailor-made &bull; Scalable &bull; Secure</div>
+          </div>
+
+          <!-- Suite 2: Web Applications -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#22c55e">
+                <path d="M3 0h2v2H3zM0 6h2v2H0zM0 9h2v2H0zM6 6h2v2H6zM9 6h2v2H9zM9 9h2v2H9zM3 3h2v2H3zM0 0h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM9 0h2v2H9zM3 9h2v2H3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Web Applications &amp; SaaS</h4>
+              <p>Lightning-fast, responsive web applications, customer portals, interactive dashboards, and SaaS platforms using modern React, Next.js, and Node.js.</p>
+            </div>
+            <div class="service-footer-note">React &bull; Next.js &bull; High Conversion</div>
+          </div>
+
+          <!-- Suite 3: Mobile Apps -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#eab308">
+                <path d="M6 0h2v2H6zM3 6h2v2H3zM6 6h2v2H6zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Mobile Applications (iOS &amp; Android)</h4>
+              <p>Intuitive, high-performance mobile apps built with Flutter, React Native, Swift, or Kotlin. Seamless offline sync, push notifications, and payment gateways.</p>
+            </div>
+            <div class="service-footer-note">iOS &bull; Android &bull; Cross-Platform</div>
+          </div>
+
+          <!-- Suite 4: AI Solutions -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#818cf8">
+                <path d="M3 6h2v2H3zM0 9h2v2H0zM6 6h2v2H6zM9 9h2v2H9zM3 3h2v2H3zM0 0h2v2H0zM6 3h2v2H6zM9 0h2v2H9z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>AI Solutions &amp; Automation</h4>
+              <p>Integrate cutting-edge Generative AI, custom LLMs, intelligent chatbots, document processing, and automated workflow agents directly into your products.</p>
+            </div>
+            <div class="service-footer-note">LLMs &bull; Automation &bull; Smart Workflows</div>
+          </div>
+
+          <!-- Suite 5: Cloud Services -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#30c48b">
+                <path d="M3 0h2v2H3zM6 0h2v2H6zM3 6h2v2H3zM0 6h2v2H0zM6 6h2v2H6zM9 6h2v2H9zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3zM6 9h2v2H6z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>Cloud Services &amp; DevOps</h4>
+              <p>Resilient cloud architecture across AWS, Azure, and Google Cloud. Automated CI/CD pipelines, container orchestration (Docker/K8s), and 99.9% uptime management.</p>
+            </div>
+            <div class="service-footer-note">AWS &bull; Docker &bull; High Availability</div>
+          </div>
+
+          <!-- Suite 6: UI/UX & Digital Transformation -->
+          <div class="service-card">
+            <div class="service-icon-box">
+              <svg viewBox="0 0 11 11" fill="#ff7b72">
+                <path d="M6 0h2v2H6zM3 6h2v2H3zM6 6h2v2H6zM3 3h2v2H3zM0 3h2v2H0zM6 3h2v2H6zM9 3h2v2H9zM3 9h2v2H3z"/>
+              </svg>
+            </div>
+            <div>
+              <h4>UI/UX Design &amp; Digital Transformation</h4>
+              <p>Human-centered user experience design, interactive Figma prototypes, complete design systems, and modernization of legacy business systems.</p>
+            </div>
+            <div class="service-footer-note">Figma &bull; Design Systems &bull; Modernization</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Solutions by Business Stage
+         ======================================================================== -->
+    <section class="use-cases-section" id="solutions">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Built for businesses<br>ready to scale</h2>
+          <p class="section-subheading">From early-stage startups validating their first product to established enterprises modernizing core operations, we have the right team model.</p>
+        </div>
+
+        <div class="use-cases-accordion">
+          <!-- Stage 1 -->
+          <div class="use-case-item active" data-usecase="1">
+            <div class="use-case-header">
+              <div class="use-case-title-left">
+                <span class="use-case-number">001</span>
+                <span class="use-case-heading">For Startups &amp; Founders</span>
+              </div>
+              <div class="use-case-toggle-icon">−</div>
+            </div>
+            <div class="use-case-body">
+              <div class="use-case-inner-content">
+                <p class="use-case-desc">
+                  Turn your product concept into a launch-ready MVP in 4 to 6 weeks. We help you design the user journey, choose the right scalable tech stack, develop core features, and launch to your first paid customers without wasting capital.
+                </p>
+                <div class="use-case-preview-card">
+                  <span class="tag-badge">MVP Launchpad</span>
+                  <h5>Rapid Concept to Market</h5>
+                  <p>Fast-track development with pre-built architectures for authentication, payments, and modern cloud hosting.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="use-case-item" data-usecase="2">
+            <div class="use-case-header">
+              <div class="use-case-title-left">
+                <span class="use-case-number">002</span>
+                <span class="use-case-heading">For Growing Businesses &amp; Scaleups</span>
+              </div>
+              <div class="use-case-toggle-icon">+</div>
+            </div>
+            <div class="use-case-body">
+              <div class="use-case-inner-content">
+                <p class="use-case-desc">
+                  Upgrade and expand your existing digital products. We help you add mobile apps, integrate AI-powered automations, eliminate performance bottlenecks, and scale backend infrastructure to handle 10x traffic spikes effortlessly.
+                </p>
+                <div class="use-case-preview-card">
+                  <span class="tag-badge">Growth Acceleration</span>
+                  <h5>Scale Without Rebuilding</h5>
+                  <p>Refactor legacy bottlenecks, add high-impact features, and implement automated DevOps pipelines.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="use-case-item" data-usecase="3">
+            <div class="use-case-header">
+              <div class="use-case-title-left">
+                <span class="use-case-number">003</span>
+                <span class="use-case-heading">For Enterprises &amp; Organizations</span>
+              </div>
+              <div class="use-case-toggle-icon">+</div>
+            </div>
+            <div class="use-case-body">
+              <div class="use-case-inner-content">
+                <p class="use-case-desc">
+                  Modernize legacy core systems with secure, cloud-native architectures. We implement custom ERPs, internal portals, AI data pipelines, and strict SOC-2/GDPR compliance with dedicated dedicated engineering squads.
+                </p>
+                <div class="use-case-preview-card">
+                  <span class="tag-badge">Digital Transformation</span>
+                  <h5>Enterprise Reliability &amp; Security</h5>
+                  <p>Seamless system integration, zero data loss migration, and guaranteed 99.9% uptime service level agreements.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         How We Build Products (3-Stage Agile Lifecycle)
+         ======================================================================== -->
+    <section class="workflow-section" id="process">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">A proven path from<br>concept to market</h2>
+          <p class="section-subheading">Our agile product methodology ensures complete transparency, rapid delivery sprints, and software built to last.</p>
+        </div>
+
+        <div class="workflow-layout">
+          <!-- Steps Selection -->
+          <div class="workflow-steps-list">
+            <div class="workflow-step-card" data-step="1">
+              <span class="step-badge">STAGE 1</span>
+              <h4>Discovery &amp; UI/UX Architecture</h4>
+              <p>We analyze your business workflows, define technical requirements, and create clickable Figma prototypes.</p>
+            </div>
+
+            <div class="workflow-step-card active" data-step="2">
+              <span class="step-badge">STAGE 2</span>
+              <h4>Agile Engineering &amp; Sprints</h4>
+              <p>Bi-weekly sprint demos with clean code, automated unit testing, continuous client feedback, and staging environments.</p>
+            </div>
+
+            <div class="workflow-step-card" data-step="3">
+              <span class="step-badge">STAGE 3</span>
+              <h4>Cloud Deployment &amp; Ongoing Scale</h4>
+              <p>Automated CI/CD production rollout, performance tuning, proactive monitoring, and long-term SLA maintenance.</p>
+            </div>
+          </div>
+
+          <!-- Interactive Editor Preview -->
+          <div class="workflow-editor-window">
+            <div class="workflow-editor-toolbar">
+              <div class="formatting-tools">
+                <button class="toolbar-btn" id="editor-btn-bold" type="button"><strong>SPRINT: ACTIVE</strong></button>
+                <button class="toolbar-btn" id="editor-btn-italic" type="button">STAGE: PRODUCTION READINESS</button>
+              </div>
+
+              <div class="action-tools">
+                <button class="action-btn" id="editor-btn-regenerate" type="button">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+                  Verify Stage
+                </button>
+                <button class="action-btn" id="editor-btn-copy" type="button" title="Copy checklist">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="editor-preview-content">
+              <div class="subject-line" id="editor-preview-subject">Product Blueprint: Agile Sprint Execution</div>
+              <div id="editor-preview-body" style="font-family: var(--font-mono); font-size: 13.5px; line-height: 1.7; color: #a5d6ff;">
+                &bull; <span style="color: #7ee787;">Sprint Cycle</span>: 2-Week Iterative Milestones<br>
+                &bull; <span style="color: #7ee787;">Code Quality</span>: Type-Safe, Linted, 90%+ Test Coverage<br>
+                &bull; <span style="color: #7ee787;">Client Reviews</span>: Live Staging Demos every Friday<br>
+                &bull; <span style="color: #7ee787;">Cloud Deployment</span>: Dockerized AWS / Google Cloud Infrastructure<br>
+                &bull; <span style="color: #30c48b;">Status</span>: 100% On-Schedule Delivery &bull; Verified ✓
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Bento Grid: Results & Architecture
+         ======================================================================== -->
+    <section class="results-section" id="results">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Technology that earns its place<br>in your business</h2>
+          <p class="section-subheading">Every software product we deliver is tailored to your business goals, engineered for real users, and built to scale effortlessly.</p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1: Large Brand Card -->
+          <div class="bento-card bento-card-large">
+            <div>
+              <img src="assets/images/logo-desat.png" alt="Desat Info Tech" class="bento-brand-logo">
+              <h3>Built Around Your Growth Goals</h3>
+              <p>We translate business challenges into practical, high-performing digital products that your team and customers can rely on every single day.</p>
+              <p style="font-style: italic; color: #8b949e; margin-top: 10px;">From discovery to launch and beyond.</p>
+            </div>
+            <a href="contact-us.html" class="btn-primary" style="align-self: flex-start; margin-top: 20px;">Start Your Build</a>
+          </div>
+
+          <!-- Card 2: Designed to Perform -->
+          <div class="bento-card">
+            <div>
+              <div class="service-icon-box" style="margin-bottom: 16px;">
+                <svg viewBox="0 0 11 11" fill="#818cf8"><path d="M3 6h2v2H3zM0 9h2v2H0zM6 6h2v2H6zM9 9h2v2H9zM3 3h2v2H3zM0 0h2v2H0zM6 3h2v2H6zM9 0h2v2H9z"/></svg>
+              </div>
+              <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Designed to Perform</h4>
+              <p style="font-size: 14px; color: #8b949e; line-height: 1.6;">Thoughtful UI/UX design, resilient engineering, and cloud-ready architectures work together to create seamless digital products.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: 87% Scalable -->
+          <div class="bento-card bento-stat-card">
+            <div>
+              <div class="stat-label">SCALABLE BY DESIGN</div>
+              <div class="stat-number">87%</div>
+            </div>
+            <p class="stat-description">Flexible modular code foundations help your product scale 10x without forcing expensive architectural rebuilds.</p>
+          </div>
+
+          <!-- Card 4: 100% Real Users -->
+          <div class="bento-card bento-stat-card">
+            <div>
+              <div class="stat-label">MADE FOR REAL USERS</div>
+              <div class="stat-number">100%</div>
+            </div>
+            <p class="stat-description">Every user interface is shaped around human workflows, ensuring your product feels intuitive and easy to adopt.</p>
+          </div>
+
+          <!-- Card 5: 50+ Connected Technologies -->
+          <div class="bento-card bento-performance-card" id="integrations">
+            <div class="bento-performance-header">
+              <div>
+                <h4>Technology That Works Together</h4>
+                <p>We integrate modern frameworks, cloud providers, databases, and third-party APIs seamlessly.</p>
+              </div>
+            </div>
+
+            <div class="app-icons-grid">
+              <div class="app-icon-item" title="Slack"><img src="assets/images/tech-slack.png" alt="Slack"></div>
+              <div class="app-icon-item" title="Notion"><img src="assets/images/tech-notion.png" alt="Notion"></div>
+              <div class="app-icon-item" title="Zapier"><img src="assets/images/tech-zapier.png" alt="Zapier"></div>
+              <div class="app-icon-item" title="Google Workspace"><img src="assets/images/tech-googledocs.png" alt="Google"></div>
+              <div class="app-icon-item" title="LinkedIn"><img src="assets/images/social-linkedin.png" alt="LinkedIn"></div>
+              <div class="app-icon-item" title="X"><img src="assets/images/social-x.png" alt="X"></div>
+              <div class="app-icon-item" title="Asana"><img src="assets/images/BPPaIo0JzXU1pg5qKzI8XasN8k.svg" alt="Asana"></div>
+              <div class="app-icon-item" title="Discord"><img src="assets/images/8waqaM1BdpBtlREngCYMMcki6Qs.svg" alt="Discord"></div>
+              <div class="app-icon-item" title="Framer"><img src="assets/images/tech-framer.png" alt="Framer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Digital Products Showcase
+         ======================================================================== -->
+    <section class="showcase-section" id="showcase">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Digital products that<br>move business forward</h2>
+          <p class="section-subheading">Explore the kinds of platforms, applications, and intelligent solutions Desat Info Tech brings to life.</p>
+        </div>
+
+        <div class="showcase-cards-list">
+          <!-- Product 1 -->
+          <div class="showcase-card">
+            <div class="showcase-info">
+              <h3>Customer Experience &amp; Web Platform</h3>
+              <p>A tailored web application that brings customer journeys, automated order workflows, and actionable business insights together in one secure cloud portal.</p>
+              <div class="showcase-tags">Web Application &bull; UI/UX &bull; Cloud Services</div>
+            </div>
+            <div class="showcase-visual">
+              <img src="assets/images/product-customer-exp.png" alt="Customer Experience Platform Preview" width="500" height="312">
+            </div>
+          </div>
+
+          <!-- Product 2 (Reverse) -->
+          <div class="showcase-card reverse">
+            <div class="showcase-info">
+              <h3>Mobile App Experience (iOS &amp; Android)</h3>
+              <p>Mobile-first experiences that give customers and field teams fast, intuitive access to services, offline synchronization, and instant push notifications.</p>
+              <div class="showcase-tags">Mobile App &bull; Product Design &bull; REST API</div>
+            </div>
+            <div class="showcase-visual">
+              <img src="assets/images/product-mobile-app.png" alt="Mobile App Experience Preview" width="500" height="312">
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="showcase-card">
+            <div class="showcase-info">
+              <h3>AI-Powered Operations &amp; Automation</h3>
+              <p>Intelligent automation and AI-enabled workflows that help teams reduce operational friction, automate manual document processing, and make data-driven decisions.</p>
+              <div class="showcase-tags">AI Solutions &bull; Automation &bull; Digital Transformation</div>
+            </div>
+            <div class="showcase-visual">
+              <img src="assets/images/product-ai-operations.png" alt="AI Operations Preview" width="500" height="312">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ========================================================================
+         Testimonials Section
+         ======================================================================== -->
+    <section class="testimonials-section">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Trusted by businesses<br>that scale</h2>
+          <p class="section-subheading">See how our software products and engineering squads help leaders achieve measurable business results.</p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Card 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-top">
+              <span class="quote-icon">“</span>
+              <div class="star-rating">5.0 <span class="star">★</span></div>
+            </div>
+            <p class="testimonial-text">
+              "Desat Info Tech built our SaaS customer platform from scratch in 5 weeks. Their attention to clean architecture and UI/UX design made our onboarding effortless."
+            </p>
+            <div class="testimonial-author-row">
+              <img src="assets/images/avatar-1.png" alt="David Miller" class="author-avatar">
+              <div class="author-details">
+                <h5>David Miller</h5>
+                <p>Founder &amp; CEO, Rentigo</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-top">
+              <span class="quote-icon">“</span>
+              <div class="star-rating">5.0 <span class="star">★</span></div>
+            </div>
+            <p class="testimonial-text">
+              "The AI automation solution Desat implemented cut our manual back-office tasks by 60%. They are our go-to technology partner for every digital product."
+            </p>
+            <div class="testimonial-author-row">
+              <img src="assets/images/avatar-2.png" alt="Sarah Chen" class="author-avatar">
+              <div class="author-details">
+                <h5>Sarah Chen</h5>
+                <p>VP of Operations, Vista Corp</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-card-top">
+              <span class="quote-icon">“</span>
+              <div class="star-rating">5.0 <span class="star">★</span></div>
+            </div>
+            <p class="testimonial-text">
+              "Our mobile app was delivered on time and within budget. Desat's team felt like an extension of our internal engineering squad. Highly recommended!"
+            </p>
+            <div class="testimonial-author-row">
+              <img src="assets/images/avatar-3.png" alt="Emma Rodriguez" class="author-avatar">
+              <div class="author-details">
+                <h5>Emma Rodriguez</h5>
+                <p>Product Lead, DriveON</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         FAQ Section
+         ======================================================================== -->
+    <section class="faq-section" id="faq">
+      <div class="container">
+        <div class="section-header-block">
+          <h2 class="section-heading">Frequently asked<br>questions</h2>
+          <p class="section-subheading">Learn how Desat Info Tech delivers custom software products, collaborates with your team, and supports your growth.</p>
+        </div>
+
+        <div class="faq-grid">
+          <!-- FAQ 1 (Active) -->
+          <div class="faq-item active">
+            <div class="faq-header">
+              <span class="faq-question">What services does Desat Info Tech provide?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Desat Info Tech is a software development company focused on delivering innovative digital solutions. We specialize in custom software development, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Who owns the intellectual property (IP) and code?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>You retain 100% full intellectual property and source code ownership from day one. All repositories, cloud assets, design files, and documentation belong completely to your company upon milestone completion.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">How fast can you build and launch our software product?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>For MVP products and focused web or mobile apps, we typically design, build, and launch within 4 to 6 weeks. For comprehensive enterprise software platforms, we deliver working increments in 2-week agile sprints.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Can you integrate AI solutions into our existing software?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes. We integrate modern AI capabilities—including Generative AI, custom LLMs, document understanding, intelligent recommendation engines, and automated workflow agents—into your existing web, mobile, and backend systems.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Do you offer post-launch maintenance and cloud support?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Yes. We provide ongoing product maintenance, cloud infrastructure management (AWS, Azure, GCP), security patching, 24/7 uptime monitoring, and continuous feature sprints to support your long-term growth.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6 -->
+          <div class="faq-item">
+            <div class="faq-header">
+              <span class="faq-question">Can you work alongside our existing in-house developers?</span>
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely. We can augment your internal engineering team with dedicated developers, lead specific architecture initiatives, or manage the end-to-end product lifecycle from design through production.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         Bottom CTA Banner Section
+         ======================================================================== -->
+    <section class="cta-banner-section">
+      <div class="container">
+        <div class="cta-banner-card">
+          <div class="cta-banner-content">
+            <h2>Ready to build your next<br>software product?</h2>
+            <p>Turn your business vision into reliable, scalable, and modern technology. Talk with our product architects today and get a detailed proposal.</p>
+            <div class="cta-banner-buttons">
+              <a href="contact-us.html" class="btn-primary">Start Your Project</a>
+              <a href="contact-us.html" class="btn-secondary">Schedule Consultation</a>
+            </div>
+          </div>
+
+          <div class="terminal-box">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+            </div>
+            <div class="terminal-line"><span class="terminal-keyword">desat_product_engine:</span></div>
+            <div class="terminal-line">> Architecture: Custom Software &amp; Cloud Platform</div>
+            <div class="terminal-line" style="margin-top: 10px;"><span class="terminal-action">initiating build squad...</span></div>
+            <div class="terminal-line">→ UI/UX wireframes &amp; prototypes ready</div>
+            <div class="terminal-line">→ React &bull; Node.js &bull; Flutter &bull; AI Stack</div>
+            <div class="terminal-line">→ Dockerized AWS Cloud Infrastructure</div>
+            <div class="terminal-line" style="margin-top: 10px;"><span class="terminal-keyword">deliverables:</span></div>
+            <div class="terminal-line"><span class="terminal-output">✓ Production-ready scalable software</span></div>
+            <div class="terminal-line"><span class="terminal-output">✓ 100% intellectual property ownership</span></div>
+            <div class="terminal-line" style="margin-top: 10px;"><span class="terminal-ready">status: ready to build &amp; scale ✓</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px;">
+            <img src="assets/images/logo-nav.png" alt="Desat Info Tech" class="footer-logo">
+            <span class="product-badge-tag"><span class="pulsing-dot"></span> Products</span>
+          </a>
+          <p class="footer-description">
+            Desat Info Tech is a software development company focused on delivering innovative digital solutions. We specialize in custom software development, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation.
+          </p>
+          <a href="mailto:desatinfotech@gmail.com" class="footer-email-link">
+            desatinfotech@gmail.com
+          </a>
+        </div>
+
+        <div class="footer-col">
+          <h5>Products &amp; Suites</h5>
+          <ul class="footer-nav-list">
+            <li><a href="#products">Custom Software</a></li>
+            <li><a href="#products">Web Applications</a></li>
+            <li><a href="#products">Mobile Apps</a></li>
+            <li><a href="#products">AI Solutions</a></li>
+            <li><a href="#products">Cloud &amp; DevOps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company &amp; Legal</h5>
+          <ul class="footer-nav-list">
+            <li><a href="contact-us.html">Start a Project</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Connect With Us</h5>
+          <div class="footer-social-links" style="flex-direction: column; align-items: flex-start; gap: 10px;">
+            <a href="https://www.linkedin.com/company/desat-infotech/about/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/desatinfotech/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/YTsyhanenko" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+            <a href="mailto:desatinfotech@gmail.com">desatinfotech@gmail.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Desat Info Tech. All Rights Reserved. Coimbatore, Tamil Nadu, India.</div>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/company/desat-infotech/about/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://www.instagram.com/desatinfotech/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/YTsyhanenko" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Engine -->
+  <script src="js/main.js"></script>
+</body>
+</html>

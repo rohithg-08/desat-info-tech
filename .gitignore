@@ -1,0 +1,21 @@
+# Dependencies and OS files
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Design / Scratch binaries
+Adobe Photoshop 2026/
+New folder/
+
+# Scraped raw source dumps & helper scripts
+scraped_*.html
+js_*.mjs
+download_*.js
+extract_*.js
+inspect*.js
+find_*.js
+print_*.js
+search_ids.js
+organize_assets.js
+public/
