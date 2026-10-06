@@ -24,13 +24,13 @@
 
 <style>
 :root{
-  --paper:#F5F8FD; --panel:#FFFFFF; --ink:#0A1A45; --muted:#55668A; --line:#DAE2F1;
-  --blue:#1E5BFF; --blue-soft:#E6EEFF; --navy:#0A1A45; --green:#12B58F; --amber:#E8930C; --dots:30,91,255;
-  --r-lg:22px; --r-md:12px; --strip:38px;
+  --paper:#f9f9f9; --panel:#FFFFFF; --ink:#181818; --muted:#686868; --line:#ededed;
+  --blue:#006fff; --blue-soft:#eef6ff; --navy:#181818; --green:#12B58F; --amber:#E8930C; --dots:0,111,255;
+  --r-lg:20px; --r-md:12px; --strip:38px;
   --display:'Sora',system-ui,sans-serif; --body:'Figtree',system-ui,sans-serif;
 }
 [data-theme="dark"]{
-  --paper:#060E26; --panel:#0D1A3D; --ink:#EDF2FF; --muted:#94A7CC; --line:#1B2E5E;
+  --paper:#0a0c10; --panel:#12151e; --ink:#f3f4f6; --muted:#9ca3af; --line:#1e2433;
   --blue:#5B8BFF; --blue-soft:#12244f; --dots:120,160,255; --green:#3DDBB2; --amber:#F2AE3D;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -41,7 +41,8 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
 .wrap{width:min(1160px,92%);margin:0 auto}
 section{padding:120px 0;position:relative;z-index:1}
-.tint{background:color-mix(in srgb,var(--panel) 82%,transparent);border-block:1px solid var(--line)}
+.tint{background:#f4f5f7;border-block:1px solid var(--line)}
+[data-theme="dark"] .tint{background:#0e1017;border-block:1px solid var(--line)}
 .kicker{color:var(--blue);font-weight:600;margin-bottom:14px}
 h2{font-size:clamp(1.9rem,4.2vw,3.1rem);font-weight:800;max-width:20ch}
 h2.wide{max-width:26ch}
@@ -49,7 +50,7 @@ h2.wide{max-width:26ch}
 .sub-h{font-family:var(--display);font-weight:700;font-size:1.35rem;letter-spacing:-.02em;margin:84px 0 6px}
 
 /* 3D background */
-#bg3d{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#bg3d{display:none}
 
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--navy),var(--blue));z-index:200}
 [data-theme="dark"] #progress{background:linear-gradient(90deg,var(--blue),var(--green))}
@@ -94,8 +95,8 @@ nav.scrolled{background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop
 .btn.sm{padding:8px 16px;font-size:.9rem;border-radius:10px}
 .nav-cta{padding:10px 20px;font-size:.93rem}
 
-/* hero */
-#home{min-height:100svh;padding:170px 0 90px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(55% 60% at 82% 42%,color-mix(in srgb,var(--blue-soft) 90%,transparent),transparent 72%)}
+#home{min-height:100svh;padding:170px 0 90px;display:flex;align-items:center;overflow:hidden;background:radial-gradient(ellipse 80% 50% at 50% 20%, rgba(200, 235, 255, 0.45) 0%, rgba(249, 249, 249, 0) 75%),var(--paper)}
+[data-theme="dark"] #home{background:radial-gradient(ellipse 80% 50% at 50% 20%, rgba(30, 91, 255, 0.15) 0%, transparent 75%),var(--paper)}
 .hero-in{position:relative;z-index:2}
 .hello{font-family:'Noto Sans Tamil',var(--body);font-weight:700;color:var(--blue);font-size:1.02rem;display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:8px 18px;border-radius:999px}
 .hello b{width:9px;height:9px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
@@ -447,9 +448,9 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
       <span class="wm"><b>DES<em>Λ</em>T</b><small>INFO TECH</small></span>
     </a>
     <ul class="links" id="links">
+      <li><a href="#products">Products &amp; Suites</a></li>
       <li><a href="#erp">ERP &amp; Production</a></li>
       <li><a href="#rnd">R&amp;D</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#about">Company</a></li>
       <li><a href="#careers">Careers</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -472,11 +473,11 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
     </h1>
     <p class="hero-sub">Desat Info Tech delivers custom software, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#erp">See ERP &amp; production</a>
+      <a class="btn btn-primary" href="#products">Explore Products</a>
       <a class="btn btn-ghost" href="#contact">Talk to us</a>
     </div>
     <div class="hero-tags">
-      <a href="#erp">ERP &amp; production</a><a href="#rnd">R&amp;D modules</a><a href="#services">Automation, web, mobile &amp; AI</a><a href="#careers">We are hiring</a>
+      <a href="#products">Software Products</a><a href="#erp">ERP &amp; production</a><a href="#rnd">R&amp;D modules</a><a href="#careers">We are hiring</a>
     </div>
     <div class="motto"><span>INNOVATE</span><i>■</i><span>DEVELOP</span><i>■</i><span>DELIVER</span></div>
   </div>
@@ -610,8 +611,9 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<div id="services" style="position:relative;top:-100px;"></div>
+<!-- PRODUCTS / SERVICES -->
+<section id="products">
   <div class="wrap">
     <p class="kicker rv">What we do</p>
     <h2 class="rv wide">Innovative digital solutions<br>tailored for growth.</h2>
@@ -878,9 +880,9 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
       </div>
       <div class="f-col">
         <h4>Products</h4>
+        <a href="#products">Software Products</a>
         <a href="#erp">ERP &amp; production</a>
         <a href="#rnd">R&amp;D modules</a>
-        <a href="#services">All services</a>
       </div>
       <div class="f-col">
         <h4>Company</h4>
