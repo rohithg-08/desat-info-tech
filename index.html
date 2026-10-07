@@ -633,24 +633,8 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   <div class="wrap">
     <p class="kicker rv">Research &amp; development</p>
     <h2 class="rv wide">Modules we are building for tomorrow's factory floor.</h2>
-    <p class="lede rv">Our R&amp;D team tests new ideas on real problems before they go into client projects. Here is what is in progress, with screenshots as they become ready.</p>
+    <p class="lede rv">Our R&amp;D team tests new ideas on real problems before they go into client projects. Here is what is in progress.</p>
     <div class="rnd-list rv" id="rndList"></div>
-
-    <h3 class="sub-h rv">Screenshots</h3>
-    <div class="filter rv" id="shotFilter" role="group" aria-label="Filter screenshots by module"></div>
-
-    <p class="login-hint">Only admins can add or remove screenshots. <button id="hintLogin" type="button">Admin login</button></p>
-    <div class="uploader admin-only" id="uploader">
-      <h3>Add screenshots</h3>
-      <div class="up-row">
-        <div class="field"><select id="upMod"></select><label for="upMod">Module</label></div>
-        <div class="field"><input id="upCap" placeholder=" " maxlength="80"><label for="upCap">Caption (optional)</label></div>
-      </div>
-      <label class="drop" id="drop" for="upFile"><strong>Drop screenshots here</strong><span>or click to choose images (PNG, JPG or WebP, up to 8 MB each)</span></label>
-      <input type="file" id="upFile" accept="image/*" multiple hidden>
-      <p class="note">Uploads stay in this browser session only. To publish them for every visitor, add the image files to your site folder and list them in the <code>SHOTS</code> array in the script.</p>
-    </div>
-    <div class="gallery" id="gallery"></div>
   </div>
 </section>
 
@@ -973,12 +957,6 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   </div>
 </dialog>
 
-<!-- screenshot viewer -->
-<dialog id="lb" aria-label="Screenshot viewer">
-  <button class="icon-btn dlg-x" type="button" data-close aria-label="Close">✕</button>
-  <img id="lbImg" alt="">
-  <p id="lbCap"></p>
-</dialog>
 
 <script>
 /* ============ EDIT THESE ============ */
@@ -1176,54 +1154,22 @@ function drawAI(i){
 }
 drawAI(0);
 
-/* ---------- R&D list, filter, gallery ---------- */
+/* ---------- R&D list ---------- */
 const stClass = { Research:'idle', Prototype:'', Testing:'ok' };
-$('#rndList').innerHTML = RND.map(m => `<div class="rnd-row"><h3>${esc(m.name)}</h3><p>${esc(m.text)}</p><span class="pill ${stClass[m.status]||''}">${esc(m.status)}</span></div>`).join('');
-$('#upMod').innerHTML = RND.map(m => `<option>${esc(m.name)}</option>`).join('');
-let shots = SHOTS.map(s => ({ ...s })), filt = 'All';
-$('#shotFilter').innerHTML = ['All', ...RND.map(m => m.name)].map((n,i) => `<button type="button" aria-pressed="${i===0}" data-m="${esc(n)}">${esc(n)}</button>`).join('');
-$('#shotFilter').onclick = e => { const b = e.target.closest('button'); if (!b) return; filt = b.dataset.m; $$('#shotFilter button').forEach(x => x.setAttribute('aria-pressed', x === b)); renderShots(); };
-function renderShots(){
-  const view = shots.map((s,i) => ({ ...s, i })).filter(s => filt === 'All' || s.module === filt);
-  if (!view.length) {
-    const msg = document.body.classList.contains('is-admin') ? 'Use the uploader above to add the first screenshot.' : 'Screenshots for this module will appear here soon.';
-    $('#gallery').innerHTML = [0,1,2].map(() => `<figure class="shot ph"><div class="shot-img">${msg}</div></figure>`).join('');
-    return;
-  }
-  $('#gallery').innerHTML = view.map(s => `<figure class="shot"><button class="shot-img" type="button" data-open="${s.i}" aria-label="View ${esc(s.caption || s.module)}"><img src="${esc(s.src)}" alt="${esc(s.caption || s.module + ' screenshot')}" loading="lazy"></button><button class="del" type="button" data-del="${s.i}">Remove</button><figcaption><b>${esc(s.caption || s.module)}</b><small>${esc(s.module)}</small></figcaption></figure>`).join('');
-}
-$('#gallery').onclick = e => {
-  const o = e.target.closest('[data-open]'), d = e.target.closest('[data-del]');
-  if (d) { shots.splice(+d.dataset.del, 1); renderShots(); return; }
-  if (o) { const s = shots[+o.dataset.open]; $('#lbImg').src = s.src; $('#lbImg').alt = s.caption || s.module; $('#lbCap').textContent = (s.caption ? s.caption + ' — ' : '') + s.module; $('#lb').showModal(); }
-};
-function addFiles(files){
-  const ok = [...files].filter(f => f.type.startsWith('image/') && f.size <= 8 * 1024 * 1024);
-  if (!ok.length) { toast('Please choose image files under 8 MB'); return; }
-  const mod = $('#upMod').value, cap = $('#upCap').value.trim();
-  ok.forEach(f => shots.push({ src: URL.createObjectURL(f), module: mod, caption: cap || f.name.replace(/\.[^.]+$/, '') }));
-  $('#upCap').value = '';
-  filt = 'All'; $$('#shotFilter button').forEach((x,i) => x.setAttribute('aria-pressed', i === 0));
-  renderShots(); toast(ok.length + (ok.length > 1 ? ' screenshots added' : ' screenshot added'));
-}
-$('#upFile').onchange = e => { addFiles(e.target.files); e.target.value = ''; };
-const drop = $('#drop');
-['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
-['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
-drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
-renderShots();
+const rndList = $('#rndList');
+if (rndList) rndList.innerHTML = RND.map(m => `<div class="rnd-row"><h3>${esc(m.name)}</h3><p>${esc(m.text)}</p><span class="pill ${stClass[m.status]||''}">${esc(m.status)}</span></div>`).join('');
 
 /* ---------- admin login ---------- */
 const dlg = $('#loginDlg');
 $('#demoNote').textContent = ADMIN.loginUrl ? '' : 'Preview mode: no server is connected yet, so this login is only a demo.';
 const openLogin = () => { $('#loginErr').textContent = ''; dlg.showModal(); $('#lu').focus(); };
-['#openLogin','#hintLogin','#footLogin'].forEach(s => $(s).onclick = openLogin);
+['#openLogin','#footLogin'].forEach(s => { const el = $(s); if (el) el.onclick = openLogin; });
 $$('[data-close]').forEach(b => b.onclick = () => b.closest('dialog').close());
 $$('dialog').forEach(d => d.addEventListener('click', e => { if (e.target === d) d.close(); }));
 function setAdmin(on, name){
   document.body.classList.toggle('is-admin', on);
-  $('#adminName').textContent = name || 'Admin';
-  renderShots();
+  const adm = $('#adminName');
+  if (adm) adm.textContent = name || 'Admin';
 }
 $('#loginForm').onsubmit = async e => {
   e.preventDefault();
@@ -1238,8 +1184,7 @@ $('#loginForm').onsubmit = async e => {
       if (u !== ADMIN.demoUser || p !== ADMIN.demoPass) throw new Error();
       setAdmin(true, u);
     }
-    dlg.close(); e.target.reset(); toast('Signed in. You can now manage R&D screenshots.');
-    location.hash = '#rnd';
+    dlg.close(); e.target.reset(); toast('Signed in successfully.');
   } catch { $('#loginErr').textContent = 'Incorrect username or password. Please try again.'; }
 };
 $('#logout').onclick = () => { setAdmin(false); toast('Signed out'); };
