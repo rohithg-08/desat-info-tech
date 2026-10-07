@@ -20,7 +20,7 @@
 <!-- Google Fonts: Inter, Fragment Mono, JetBrains Mono, Noto Sans Tamil (Matching Framer Typography) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fragment+Mono:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fragment+Mono:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -119,19 +119,15 @@ nav.scrolled{background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop
 .workflow-section{position:relative;isolation:isolate;overflow:hidden}
 .workflow-section>.cloud-background{top:120px}
 .hero-in{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%}
-.hello{font-family:'Noto Sans Tamil',var(--body);font-weight:700;color:var(--blue);font-size:1.02rem;display:inline-flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);padding:8px 18px;border-radius:999px}
-.hello b{width:9px;height:9px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
-h1{font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:600;max-width:20ch;margin:24px auto 18px;letter-spacing:-.03em;line-height:1.1;text-align:center}
-h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
-h1 .ln span{display:block;transform:translateY(105%);animation:rise .7s cubic-bezier(.2,.8,.2,1) forwards}
-h1 .ln:nth-child(2) span{animation-delay:.08s}h1 .ln:nth-child(3) span{animation-delay:.16s}
-.hero-sub{max-width:62ch;margin:0 auto;color:var(--muted);font-size:1.15rem;text-align:center;animation:fade .5s .15s both}
-.hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:26px;animation:fade .5s .25s both}
-.hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px;animation:fade .5s .35s both}
-.hero-tags a{text-decoration:none;padding:7px 16px;border:1px solid var(--line);border-radius:999px;font-size:.92rem;font-weight:500;color:var(--muted);background:color-mix(in srgb,var(--panel) 70%,transparent);transition:border-color .2s,color .2s}
-.hero-tags a:hover{border-color:var(--blue);color:var(--ink)}
-.motto{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:20px;font-family:var(--display);font-weight:700;font-size:.85rem;letter-spacing:.22em;color:var(--muted);animation:fade .5s .4s both}
-.motto i{color:var(--blue);font-style:normal}
+h1{font-family:var(--display);font-size:clamp(2.7rem,6.2vw,4.6rem);font-weight:600;max-width:18ch;margin:0 auto 22px;letter-spacing:-.03em;line-height:1.1;text-align:center;color:#181818}
+[data-theme="dark"] h1{color:#181818}
+.hero-sub{max-width:820px;margin:0 auto 32px;color:#4b5563;font-size:clamp(1.05rem,1.3vw,1.18rem);line-height:1.45;text-align:center}
+[data-theme="dark"] .hero-sub{color:#4b5563}
+.hero-cta{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:0 auto 40px}
+.btn-hero-dark{display:inline-flex;align-items:center;justify-content:center;height:48px;min-width:142px;padding:0 24px;border-radius:4px;background:#181818;color:#ffffff;border:1px solid #181818;font-family:var(--body);font-size:14.5px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .2s,box-shadow .2s,transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.btn-hero-dark:hover{background:#282828;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.btn-hero-light{display:inline-flex;align-items:center;justify-content:center;height:48px;min-width:142px;padding:0 24px;border-radius:4px;background:#ffffff;color:#181818;border:1px solid #181818;font-family:var(--body);font-size:14.5px;font-weight:500;text-decoration:none;cursor:pointer;transition:background .2s,border-color .2s,box-shadow .2s,transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.btn-hero-light:hover{background:#f5f5f5;border-color:#000000;transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.08)}
 .loc{position:absolute;right:4%;bottom:28px;z-index:2;background:var(--panel);border:1px solid var(--line);padding:10px 18px;border-radius:999px;font-weight:600;font-size:.92rem;display:flex;gap:10px;align-items:center}
 .loc b{width:10px;height:10px;border-radius:50%;background:var(--green);animation:pulse 1.8s infinite}
 @keyframes rise{to{transform:none}}
@@ -501,21 +497,15 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   <span class="spark-cross right" aria-hidden="true">✦</span>
 
   <div class="wrap hero-in">
-    <span class="hello"><b></b>வணக்கம்! Welcome to Desat Info Tech</span>
     <h1>
-      <span class="ln"><span>Software products &amp;</span></span>
-      <span class="ln"><span>digital solutions</span></span>
-      <span class="ln"><span>built to scale.</span></span>
+      Software solutions<br>
+      built to scale.
     </h1>
-    <p class="hero-sub">Desat Info Tech delivers custom software, web applications, mobile apps, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.</p>
+    <p class="hero-sub">Desat Info Tech delivers custom software, web and mobile applications, AI solutions, cloud services, UI/UX design, and digital transformation for businesses ready to grow.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#products">Explore Products</a>
-      <a class="btn btn-ghost" href="#contact">Talk to us</a>
+      <a class="btn-hero-dark" href="#contact">Get Started</a>
+      <a class="btn-hero-light" href="#contact">Try Demo</a>
     </div>
-    <div class="hero-tags">
-      <a href="#products">Software Products</a><a href="#erp">ERP &amp; production</a><a href="#rnd">R&amp;D modules</a><a href="#careers">We are hiring</a>
-    </div>
-    <div class="motto"><span>INNOVATE</span><i>■</i><span>DEVELOP</span><i>■</i><span>DELIVER</span></div>
 
     <!-- Hero Showcase Dashboard Preview (Aligned cleanly below hero content) -->
     <div class="hero-mockup-frame">
