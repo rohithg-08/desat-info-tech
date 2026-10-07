@@ -62,7 +62,7 @@ h2.wide{max-width:26ch}
 
 /* top strip with admin login */
 .strip{position:fixed;top:0;left:0;right:0;height:var(--strip);background:#ffffff;color:#686868;border-bottom:1px solid var(--line);z-index:110;font-size:.86rem}
-.strip .wrap{display:flex;justify-content:space-between;align-items:center;height:100%}
+.strip .wrap{display:flex;justify-content:flex-end;align-items:center;height:100%}
 .strip a,.strip button{color:#686868;text-decoration:none;background:none;border:0;font:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
 .strip a:hover,.strip button:hover{color:var(--ink)}
 .strip .right{display:flex;gap:22px;align-items:center}
@@ -466,7 +466,6 @@ footer h4{font-family:var(--display);color:#181818;font-size:.98rem;margin-botto
 <!-- top strip: admin login sits here -->
 <div class="strip">
   <div class="wrap">
-    <a class="mail" href="mailto:info@desatinfotech.com">info@desatinfotech.com</a>
     <div class="right">
       <span class="admin-badge"><i></i><span id="adminName">Admin</span></span>
       <a href="#careers">Careers</a>
