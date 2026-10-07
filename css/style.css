@@ -1877,16 +1877,78 @@ img {
 /* ==========================================================================
    Contact Page Specifics
    ========================================================================== */
+/* Atmospheric cloud & animated dynamic grid background matching http://localhost:8080/ */
+.cloud-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  background: #9ebadc;
+  pointer-events: none;
+}
+.cloud-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: cloud-drift 35s ease-in-out infinite alternate;
+}
+.cloud-wash {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--bg-primary, #f9f9f9) 0%,
+    rgba(249, 249, 249, 0.8) 20%,
+    rgba(249, 249, 249, 0.25) 64%,
+    var(--bg-primary, #f9f9f9) 100%
+  );
+}
+.grid-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+@keyframes cloud-drift {
+  from { transform: scale(1.02) translateX(-1%); }
+  to { transform: scale(1.1) translateX(1%); }
+}
+.spark-cross {
+  position: absolute;
+  font-size: 26px;
+  color: var(--text-secondary, #686868);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.spark-cross.right {
+  left: auto;
+  right: 22%;
+}
+
 .contact-hero-section {
   padding-top: calc(var(--nav-height) + 60px);
   padding-bottom: 80px;
   text-align: center;
   position: relative;
-  background-color: #f9f9f9;
-  background-image: radial-gradient(ellipse 80% 50% at 50% 20%, rgba(200, 235, 255, 0.45) 0%, rgba(249, 249, 249, 0) 75%), url("../assets/images/hero-clouds.png");
-  background-repeat: no-repeat;
-  background-position: center top, center 72%;
-  background-size: 100% 100%, 1400px auto;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--bg-primary, #f9f9f9);
+}
+.contact-hero-section .container {
+  position: relative;
+  z-index: 3;
 }
 
 .contact-layout {
@@ -2006,14 +2068,21 @@ textarea.form-control {
   padding-top: calc(var(--nav-height) + 60px);
   padding-bottom: 100px;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   min-height: 80vh;
+  background-color: var(--bg-primary, #f9f9f9);
+}
+.legal-hero-section .container {
+  position: relative;
+  z-index: 3;
 }
 
 .legal-title {
   font-size: clamp(34px, 4.5vw, 54px);
   font-weight: 800;
   letter-spacing: -0.03em;
-  color: #ffffff;
+  color: var(--text-primary, #181818);
   margin-bottom: 12px;
 }
 

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initFaqAccordion();
   initContactForm();
   initScrollAnimations();
+  initAnimatedGrids();
 });
 
 /* ==========================================================================
@@ -454,4 +455,77 @@ function initScrollAnimations() {
   }, { threshold: 0.1 });
 
   animElements.forEach(el => observer.observe(el));
+}
+
+/* ==========================================================================
+   Animated Canvas Grid (Matching http://localhost:8080)
+   ========================================================================== */
+function initAnimatedGrids() {
+  const canvases = document.querySelectorAll('.grid-canvas');
+  canvases.forEach(canvas => {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+    let frame = 0;
+    let width = 0;
+    let height = 0;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const resize = () => {
+      width = canvas.clientWidth;
+      height = canvas.clientHeight;
+      const ratio = window.devicePixelRatio || 1;
+      canvas.width = Math.floor(width * ratio);
+      canvas.height = Math.floor(height * ratio);
+      ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    };
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    const draw = (time) => {
+      ctx.clearRect(0, 0, width, height);
+      const spacing = width > 800 ? 100 : 73;
+      const left = (width % spacing) / 2;
+      const line = 'rgba(255, 255, 255, 0.42)';
+      const color = '#ffffff';
+
+      ctx.strokeStyle = line;
+      ctx.lineWidth = 1;
+
+      for (let x = left; x < width; x += spacing) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+      }
+
+      for (let y = 60; y < height; y += spacing * 0.85) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+        for (let x = left; x < width; x += spacing) {
+          ctx.fillStyle = color;
+          ctx.globalAlpha = 0.2 + (Math.sin(time / 1700 + x * 0.01 + y * 0.02) + 1) * 0.16;
+          ctx.fillRect(x - 2, y - 2, 4, 4);
+        }
+      }
+
+      for (let i = 0; i < 12; i++) {
+        const x = (i * 173 + 81) % width;
+        const y = (i * 127 + 40) % height;
+        ctx.fillStyle = color;
+        ctx.globalAlpha = 0.1 + (Math.sin(time / 1900 + i) + 1) * 0.1;
+        for (let j = 0; j < 9; j++) {
+          if ([1, 3, 4, 5, 7].includes(j)) {
+            ctx.fillRect(x + (j % 3) * 10, y + Math.floor(j / 3) * 10, 7, 7);
+          }
+        }
+      }
+
+      ctx.globalAlpha = 1;
+      if (!reduced) frame = requestAnimationFrame(draw);
+    };
+
+    draw(0);
+  });
 }

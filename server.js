@@ -13,12 +13,15 @@ const MIME_TYPES = {
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
   '.woff2': 'font/woff2',
   '.woff': 'font/woff',
   '.ico': 'image/x-icon'
 };
 
-const server = http.createServer((req, res) => {
+const PORTS = [8080, 3000];
+
+const handler = (req, res) => {
   let reqPath = decodeURI(req.url.split('?')[0]);
   if (reqPath === '/' || reqPath === '') {
     reqPath = '/index.html';
@@ -41,8 +44,12 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': contentType });
     fs.createReadStream(filePath).pipe(res);
   });
-});
+};
 
-server.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}/`);
+PORTS.forEach(port => {
+  const server = http.createServer(handler);
+  server.on('error', err => console.log(`Port ${port} error:`, err.message));
+  server.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}/`);
+  });
 });
