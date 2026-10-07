@@ -77,11 +77,13 @@ body.is-admin #logout{display:inline-flex}
 nav{position:fixed;top:var(--strip);left:0;right:0;z-index:100;transition:background .3s,box-shadow .3s}
 nav.scrolled{background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:74px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand-img{height:46px;width:auto;max-width:185px;object-fit:contain;display:block;transition:transform .3s ease}
+.brand:hover .brand-img{transform:scale(1.02)}
 .brand svg{width:40px;height:40px;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
 .brand:hover svg{transform:rotate(-8deg) scale(1.08)}
 .wm{display:flex;flex-direction:column;line-height:1}
-.wm b{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:.2em}
+.wm b{font-family:var(--display);font-weight:800;font-size:1.25rem;letter-spacing:.2em;color:#181818}
 .wm b em{font-style:normal;color:var(--blue)}
 .wm small{font-family:var(--display);font-weight:700;font-size:.58rem;letter-spacing:.42em;color:var(--blue);margin-top:4px}
 .links{display:flex;gap:26px;align-items:center;list-style:none}
@@ -381,13 +383,13 @@ dialog::backdrop{background:rgba(6,14,38,.6);backdrop-filter:blur(4px)}
 
 footer{background:#ffffff;color:var(--muted);border-top:1px solid var(--line);padding:64px 0 30px;position:relative;z-index:1}
 .f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid var(--line)}
-footer .wm b{color:#fff}
-footer .wm b em,footer .wm small{color:#6C9BFF}
-footer p{font-size:.94rem;margin-top:16px;max-width:34ch}
-footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:14px}
+footer .wm b{color:#181818}
+footer .wm b em,footer .wm small{color:var(--blue)}
+footer p{font-size:.94rem;margin-top:16px;max-width:34ch;color:var(--muted)}
+footer h4{font-family:var(--display);color:#181818;font-size:.98rem;margin-bottom:14px}
 .f-col{display:flex;flex-direction:column;gap:8px;font-size:.94rem}
-.f-col a,.f-col button{text-decoration:none;color:inherit;background:none;border:0;font:inherit;text-align:left;cursor:pointer}
-.f-col a:hover,.f-col button:hover{color:#fff}
+.f-col a,.f-col button{text-decoration:none;color:var(--muted);background:none;border:0;font:inherit;text-align:left;cursor:pointer;transition:color .2s}
+.f-col a:hover,.f-col button:hover{color:var(--blue)}
 .f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:24px;font-size:.9rem}
 .wa{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#25D366;display:none;place-items:center;z-index:150;box-shadow:0 12px 30px -8px rgba(37,211,102,.7);text-decoration:none;font-size:1.6rem}
 .wa.on{display:grid}
@@ -419,6 +421,7 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   section{padding:84px 0}
   #home{padding-top:150px}
   .nav-cta{display:none}
+  .brand-img{height:36px}
   .svc-panel{padding:28px}.svc-panel ul{grid-template-columns:1fr}
   .steps,.steps.five{grid-template-columns:1fr}.map-box{height:540px}.map-card{right:22px;max-width:none}
   .kpis{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr;row-gap:24px}.node::after{display:none}
@@ -479,8 +482,7 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
 <nav id="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#home" aria-label="Desat Info Tech home">
-      <svg><use href="#mark"/></svg>
-      <span class="wm"><b>DES<em>Λ</em>T</b><small>INFO TECH</small></span>
+      <img src="assets/images/logo-desat.png" alt="Desat Info Tech" class="brand-img" width="180" height="57">
     </a>
     <ul class="links" id="links">
       <li><a href="#products">Products &amp; Suites</a></li>
@@ -905,7 +907,9 @@ footer h4{font-family:var(--display);color:#fff;font-size:.98rem;margin-bottom:1
   <div class="wrap">
     <div class="f-top">
       <div>
-        <a class="brand" href="#home" aria-label="Back to top"><svg width="40" height="40"><use href="#mark"/></svg><span class="wm"><b>DES<em>Λ</em>T</b><small>INFO TECH</small></span></a>
+        <a class="brand" href="#home" aria-label="Back to top">
+          <img src="assets/images/logo-desat.png" alt="Desat Info Tech" class="brand-img" width="180" height="57">
+        </a>
         <p>ERP, production software, automation, web, mobile and AI for growing businesses.</p>
       </div>
       <div class="f-col">
