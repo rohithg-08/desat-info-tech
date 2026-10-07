@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollAnimations();
   initAnimatedGrids();
+  initScrollClouds();
 });
 
 /* ==========================================================================
@@ -528,4 +529,69 @@ function initAnimatedGrids() {
 
     draw(0);
   });
+}
+
+/* ==========================================================================
+   Scroll-Driven Cloud Animation Engine (Matching Framer)
+   ========================================================================== */
+function initScrollClouds() {
+  const cloudImages = document.querySelectorAll('.cloud-image');
+  if (!cloudImages.length) return;
+
+  const totalFrames = 24;
+  const preloadedFrames = [];
+  for (let i = 0; i < totalFrames; i++) {
+    const img = new Image();
+    img.src = `assets/images/cloud-frames/frame_${i}.webp`;
+    preloadedFrames.push(img);
+  }
+
+  let currentY = window.scrollY;
+  let targetY = window.scrollY;
+  let lastFrame = -1;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  window.addEventListener('scroll', () => {
+    targetY = window.scrollY;
+  }, { passive: true });
+
+  function render(time) {
+    currentY += (targetY - currentY) * 0.12;
+
+    const vh = window.innerHeight || 800;
+    const progress = Math.max(0, Math.min(1, currentY / (vh * 1.5)));
+    const frameIndex = Math.min(totalFrames - 1, Math.floor(progress * totalFrames));
+
+    if (frameIndex !== lastFrame && preloadedFrames[frameIndex] && preloadedFrames[frameIndex].complete) {
+      cloudImages.forEach(el => {
+        el.src = preloadedFrames[frameIndex].src;
+      });
+      lastFrame = frameIndex;
+    }
+
+    const ambientX = Math.sin(time * 0.0006) * 12;
+    const ambientY = Math.cos(time * 0.0008) * 8;
+    const scrollTranslateY = currentY * 0.38 + ambientY;
+    const scrollTranslateX = -currentY * 0.09 + ambientX;
+    const scrollScale = 1.05 + currentY * 0.00018;
+
+    cloudImages.forEach(img => {
+      const parent = img.closest('.cloud-background')?.parentElement;
+      if (parent && parent.id !== 'home' && !parent.classList.contains('contact-hero-section')) {
+        const rect = parent.getBoundingClientRect();
+        const offset = (vh - rect.top) * 0.25;
+        img.style.setProperty('--cloud-x', (Math.sin(time * 0.0005) * 8).toFixed(2) + 'px');
+        img.style.setProperty('--cloud-y', offset.toFixed(2) + 'px');
+        img.style.setProperty('--cloud-scale', '1.06');
+      } else {
+        img.style.setProperty('--cloud-x', scrollTranslateX.toFixed(2) + 'px');
+        img.style.setProperty('--cloud-y', scrollTranslateY.toFixed(2) + 'px');
+        img.style.setProperty('--cloud-scale', scrollScale.toFixed(4));
+      }
+    });
+
+    if (!reduced) requestAnimationFrame(render);
+  }
+
+  requestAnimationFrame(render);
 }
